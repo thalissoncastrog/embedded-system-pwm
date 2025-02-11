@@ -35,9 +35,37 @@ void set_servo_position(uint gpio, uint16_t duty_cycle_us) {
 int main()
 {
     stdio_init_all();
+    pwm_setup(PWM_SERVO);
+
+    // Initial movements to 180°, 90°, and 0° respectively
+    set_servo_position(PWM_SERVO, DUTY_180);
+    sleep_ms(5000);
+
+    set_servo_position(PWM_SERVO, DUTY_90);
+    sleep_ms(5000);
+
+    set_servo_position(PWM_SERVO, DUTY_0);
+    sleep_ms(5000);
+
+    // Smooth movement between 0° and 180° continuously
+    uint16_t pos = DUTY_0;
+    int direction = 2; // Positive increment initially
 
     while (true) {
-        printf("Hello, world!\n");
-        sleep_ms(1000);
+        pos += direction;
+        set_servo_position(PWM_SERVO, pos);
+        sleep_ms(10);
+
+        pos += direction;
+
+        if (pos >= DUTY_180) {
+            pos = DUTY_180;
+            direction = -2; // Negative increment
+        } 
+        else if (pos <= DUTY_0) {
+            pos = DUTY_0;
+            direction = 2;  // Positive increment
+        }
+
     }
 }
