@@ -22,6 +22,16 @@ void pwm_setup(uint gpio) {
     pwm_set_enabled(slice, true);
 }
 
+void set_servo_position(uint gpio, uint16_t duty_cycle_us) {
+    uint slice = pwm_gpio_to_slice_num(gpio);
+
+    //Convert pulse time (µs) to PWM level (0 to WRAP_PERIOD)
+    uint16_t level = (duty_cycle_us * WRAP_PERIOD) / 20000; // 20ms = 20000µs
+
+    pwm_set_gpio_level(gpio, level);
+
+}
+
 int main()
 {
     stdio_init_all();
