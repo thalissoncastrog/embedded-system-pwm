@@ -59,6 +59,9 @@ No entanto, ao substituir pelo LED interno da placa, é possível observar varia
 
 ## 🎯 Resultado
 
+- Servo motor:
+  ![PWM SERVO MOTOR (servomotor)](assets/pwm_servomotor.gif)
+
 ## 👥 Colaboradores
 
 1. **Adão Thalisson Castro Guimarães** - [GitHub](https://github.com/thalissoncastrog)
