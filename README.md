@@ -66,6 +66,10 @@ No entanto, ao substituir pelo LED interno da placa, é possível observar varia
 
 1. **Adão Thalisson Castro Guimarães** - [GitHub](https://github.com/thalissoncastrog)
 
+## 🎥 Vídeo Ensaio
+
+- `Link`: [https://youtube.com/shorts/FaAHct1es9M?feature=share](https://youtube.com/shorts/FaAHct1es9M?feature=share)
+
 ## 📜 Licença
 
 Este projeto está licenciado sob a Licença MIT. Para mais detalhes, consulte o arquivo LICENSE.
